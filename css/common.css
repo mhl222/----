@@ -2,7 +2,7 @@ html,body{
   width: 100%;
   height: 100%;
   margin: 0px;
-  min-width:1000px;
+
 } 
 ._container{
   height: 100%;
@@ -26,4 +26,8 @@ html,body{
 }
 ._menu{
   border-right: 0 !important;
+  margin-top: 60px;
+}
+._el-submenu{
+ border-bottom: 3px solid silver;
 }
