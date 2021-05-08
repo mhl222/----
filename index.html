@@ -1,0 +1,90 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <!-- Vue 引入 -->
+  <script src="https://unpkg.com/vue@next"></script>
+  <!-- elemrntUI引入 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
+  <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
+
+  <!-- 自定css引入 -->
+  <link rel="stylesheet" href="./css/common.css">
+  <title>智能相册</title>
+</head>
+
+<body>
+  <div id="app">
+    <el-container class="_container">
+      <el-header class="_header">
+
+      </el-header>
+      <el-container class="_body">
+        <el-aside class="_aside">
+
+
+          <h5>默认颜色</h5>
+          <el-menu default-active="2"  @open="handleOpen" @close="handleClose" class="_menu">
+            <el-submenu index="1">
+              <template #title>
+                <i class="el-icon-location"></i>
+                <span>导航一</span>
+              </template>
+              <el-menu-item-group>
+                <template #title>分组一</template>
+                <el-menu-item index="1-1">选项1</el-menu-item>
+                <el-menu-item index="1-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="1-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="1-4">
+                <template #title>选项4</template>
+                <el-menu-item index="1-4-1">选项1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+            <el-menu-item index="2">
+              <i class="el-icon-menu"></i>
+              <template #title>导航二</template>
+            </el-menu-item>
+            <el-menu-item index="3" disabled>
+              <i class="el-icon-document"></i>
+              <template #title>导航三</template>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <i class="el-icon-setting"></i>
+              <template #title>导航四</template>
+            </el-menu-item>
+          </el-menu>
+
+
+
+        </el-aside>
+        <el-main></el-main>
+      </el-container>
+    </el-container>
+  </div>
+  <script>
+    const App = {
+      data() {
+        return {
+          message: "Hello Element Plus",
+        };
+      },
+      methods: {
+        handleOpen(key, keyPath) {
+          console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+          console.log(key, keyPath);
+        }
+      }
+    };
+    const app = Vue.createApp(App);
+    app.use(ElementPlus);
+    app.mount("#app");
+  </script>
+</body>
+
+</html>

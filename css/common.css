@@ -1,0 +1,29 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  min-width:1000px;
+} 
+._container{
+  height: 100%;
+}
+._header{
+  box-shadow: 0 3px 15px 0 rgb(0 0 0 / 6%);
+  height: 330px;
+  background: #fff;
+  z-index: 1;
+ 
+}
+._aside{
+  box-shadow: 3px 0 15px 0 rgb(0 0 0 / 6%);
+  background: #fff;
+  height: 100%;
+  width: 210px !important;
+
+}
+._body{
+  height: 100%;
+}
+._menu{
+  border-right: 0 !important;
+}
