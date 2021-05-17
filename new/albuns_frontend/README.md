@@ -1,4 +1,4 @@
-# album_fontend
+# albuns_frontend
 
 ## Project setup
 ```
