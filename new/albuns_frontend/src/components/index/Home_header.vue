@@ -23,8 +23,7 @@
             ></span>
             <template #dropdown>
               <el-dropdown-menu>
-                <el-dropdown-item>上传照片</el-dropdown-item>
-                <el-dropdown-item>上传文件夹</el-dropdown-item>
+                
                 <el-dropdown-item>注销</el-dropdown-item>
               </el-dropdown-menu>
             </template>

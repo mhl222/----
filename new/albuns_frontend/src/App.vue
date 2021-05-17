@@ -2,7 +2,7 @@
     <router-view></router-view>
 </template>
 <script>
-// 导入header.vue文件
+
 
 export default {
  
