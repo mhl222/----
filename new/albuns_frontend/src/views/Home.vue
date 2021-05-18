@@ -13,7 +13,6 @@
 import homeheader from '../components/index/Home_header'
 import homeaside from '../components/index/Home_aside'
 export default {
-  name: "Home",
   components: {
     homeheader,
     homeaside,

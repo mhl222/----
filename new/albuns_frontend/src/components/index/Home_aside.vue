@@ -12,7 +12,6 @@
           <span>照片</span>
         </template>
         <el-menu-item index="/index/allphoto">全部照片</el-menu-item>
-        <el-menu-item index="/index/rencent">最近上传</el-menu-item>
       </el-submenu>
       <el-submenu index="2" class="_el-submenu">
         <template #title

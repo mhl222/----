@@ -1,4 +1,4 @@
-# albuns_frontend
+# samrt_albums_webfront
 
 ## Project setup
 ```
