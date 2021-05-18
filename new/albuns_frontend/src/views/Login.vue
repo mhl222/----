@@ -57,8 +57,8 @@ export default {
 }
 .login_tit {
   text-align: center;
-  margin: 50px auto;
-  width: 50%;
+  margin: 30px auto;
+  width: 60%;
 }
 .login_img {
   margin: 0 auto;
@@ -66,8 +66,8 @@ export default {
   align-content: center;
 }
 .login_img img {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   margin: 10px;
 }
 </style>

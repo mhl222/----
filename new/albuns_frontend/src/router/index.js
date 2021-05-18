@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory  } from 'vue-router'
 import login from '../views/Login.vue'
 import Home from '../views/Home.vue'
 import allphoto from  '../components/Allphoto.vue'
 import people from  '../components/Album_people.vue'
-import location from  '../components/Album_location_.vue'
+import sortalbum from  '../components/Album_sort.vue'
 import recyclebin from  '../components/Recycle_bin.vue'
 import album from  '../components/Album.vue'
 
@@ -33,9 +33,9 @@ const routes = [
         component:people
       },
       {
-        path:'location',
-        name:'地点相册',
-        component:location
+        path:'sortalbum',
+        name:'聚类相册',
+        component:sortalbum
       },
       {
         path:'recyclebin',
@@ -62,7 +62,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  // history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 

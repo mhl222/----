@@ -23,8 +23,8 @@
         <el-menu-item index="/index/people"
           ><i class="el-icon-s-custom"></i>人物</el-menu-item
         >
-        <el-menu-item index="/index/location"
-          ><i class="el-icon-guide"></i>地点</el-menu-item
+        <el-menu-item index="/index/sortalbum"
+          ><i class="el-icon-guide"></i>聚类相册</el-menu-item
         >
       </el-submenu>
 
