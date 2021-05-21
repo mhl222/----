@@ -14,7 +14,7 @@
           <template slot="prepend">密码：</template>
         </el-input>
       </div>
-      <el-button type="primary">立即登录</el-button>
+      <el-button type="primary" @click='login'>立即登录</el-button>
        
     </div>
   </div>
@@ -28,6 +28,21 @@ export default {
       password:null
 
     }
+  },
+  methods:{
+	  async login() {
+	  		   if(!this.account || !this.password)
+			   {
+				   alert('请输入完整信息')
+				   return
+				}
+	  		    // let AccountAuth = new AccountAuth()
+	  		   // let user = await AccountAuth.getUser(this.account,this.password)
+	           // this.$store.commit('login',user)
+	  		   this.$store.commit('login',{account:this.account,password:this.password})
+			   this.$router.push('/index')
+			   
+	      }
   }
 };
 </script>

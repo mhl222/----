@@ -17,6 +17,14 @@ export default {
     homeheader,
     homeaside,
   },
+ 
+  methods:{
+	  
+  }
+  ,created() {
+  	if(!this.$store.state.loginObj)
+  	    this.$router.push('/login')
+  }
 };
 </script>
 <style>

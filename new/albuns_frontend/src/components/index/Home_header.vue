@@ -24,7 +24,7 @@
             <template #dropdown>
               <el-dropdown-menu>
                 
-                <el-dropdown-item>注销</el-dropdown-item>
+                <el-dropdown-item @click='logout()'>注销</el-dropdown-item>
               </el-dropdown-menu>
             </template>
           </el-dropdown>
@@ -36,7 +36,12 @@
 
 <script>
 export default {
- 
+ methods:{
+	 logout(){
+		 this.$store.commit('logout')
+		 this.$router.push('/login')
+	 }
+ }
 };
 </script>
 

@@ -39,6 +39,12 @@ export default {
     loginbox,
     registerbox
   },
+  //状态保持登录跳转
+  created() {
+	  console.log(JSON.stringify(this.$store.state.loginObj))
+	 if(this.$store.state.loginObj)
+  	     this.$router.push('/index')
+  }
 };
 </script>
 <style>
