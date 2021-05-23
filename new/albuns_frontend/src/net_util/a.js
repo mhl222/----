@@ -1,14 +1,14 @@
-import aws from 'aws-sdk'
+// import aws from 'aws-sdk'
 
-import request from 'request-promise-native'
-import CryptoJS from 'crypto-js'
-import base64 from 'base-64'
-import imageToBase64 from 'image-to-base64'
-// aws = require("aws-sdk");
-// request = require('request-promise-native');
-// CryptoJS = require("crypto-js")
-// base64 = require("base-64")
-// imageToBase64 = require("image-to-base64")
+// import request from 'request-promise-native'
+// import CryptoJS from 'crypto-js'
+// import base64 from 'base-64'
+// import imageToBase64 from 'image-to-base64'
+aws = require("aws-sdk");
+request = require('request-promise-native');
+CryptoJS = require("crypto-js")
+base64 = require("base-64")
+imageToBase64 = require("image-to-base64")
 
 /**
  * Special directory starts with a dot
@@ -26,8 +26,8 @@ import imageToBase64 from 'image-to-base64'
  */
 
 
-export class UserAccount {
-// class UserAccount {
+// export class UserAccount {
+class UserAccount {
     constructor(s3, userName) {
         this.s3 = s3;
         this.bucket = userName
@@ -443,9 +443,9 @@ export class UserAccount {
 
 }
 
-export class AccountAuth {
+// export class AccountAuth {
 
-// class AccountAuth {	
+class AccountAuth {	
     constructor() {
         let ak = "IZRPYLPMWZXW009G467Y";
         let sk = "DXw4H04FksjkCo19uy33rOnZwG8Ixfhte8xqXKPR";
@@ -564,10 +564,10 @@ export class AccountAuth {
 }
 
 
-// (async function () {
-//     let auth = new AccountAuth();
-//     let user = await auth.getUser("gby", "password");
-// 	console.log(user)
+(async function () {
+    let auth = new AccountAuth();
+    let user = await auth.getUser("gby", "password");
+	console.log(user)
  //    let dat1 = await imageToBase64("./test.jpg")
 	// console.log(dat1)
  //    let dat2 = await imageToBase64("./pic2.jpg")
@@ -581,11 +581,11 @@ export class AccountAuth {
 	// console.log(await user.listDirectory())
 
 
-    // await user.deleteFile("file1", "dir2")
+ //    await user.deleteFile("file1", "dir2")
 
-    // let bundle = (await user.listFilesByType("泡泡"))[0]
-    // console.log(await user.listFilesByType("泡泡"))
-    // console.log(await user.download(bundle["srcfn"], bundle["srcdir"]))
+ //    let bundle = (await user.listFilesByType("泡泡"))[0]
+ //    console.log(await user.listFilesByType("泡泡"))
+ //    console.log(await user.download(bundle["srcfn"], bundle["srcdir"]))
     
     
-// }())
+}())

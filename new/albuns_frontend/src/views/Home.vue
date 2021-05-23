@@ -3,7 +3,7 @@
     <el-header class="_header"><homeheader/></el-header>
      <el-container class="_body">
         <el-aside class="_aside"><homeaside/></el-aside>
-        <el-main><router-view></router-view></el-main>
+        <router-view></router-view>
      </el-container>
   </el-container>
 </template>
