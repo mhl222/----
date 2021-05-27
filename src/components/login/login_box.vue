@@ -61,10 +61,12 @@ export default {
 				   alert('请输入完整信息')
 				   return
 				}
-				// let auth = new AccountAuth();
-	  		   // let user = await auth.getUser(this.account,this.password)
-	           // this.$store.commit('login',user)
-			   let user = {account:this.account,password:this.password}
+				let auth = new AccountAuth();
+	  		let user = await auth.getUser(this.account,this.password)
+	      this.$store.commit('login',user)
+        
+        // 测试
+			  //  let user = {account:this.account,password:this.password}
 
 			   if(!user)
 			   {
