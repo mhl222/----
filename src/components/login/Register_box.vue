@@ -78,28 +78,35 @@
 					this.checkpw.flag =true
 				}
 			},
-			async  register() {
-				console.log('start')
-				console.log('1')
-				console.log(this.checkac.flag)
-				console.log(this.checkpw.flag)
-				if (this.checkac.flag && this.checkpw.flag) {
-					 let auth = new AccountAuth();
-					 auth.test()
-					 // let ret = await auth.register(this.input1,this.input2)
-					 let ret = true
-					 if(ret)
-					 {
-						 alert("注册成功,账号为："+this.input1)
-						 this.centerDialogVisible = false
-					 }else{
-						  alert("注册失败,请重新尝试")
-					 }
-				} else {
-					alert('请检查信息完整！')
+      // 待验证
+			// async  register() {
+			// 	console.log('start')
+			// 	console.log('1')
+			// 	console.log(this.checkac.flag)
+			// 	console.log(this.checkpw.flag)
+			// 	if (this.checkac.flag && this.checkpw.flag) {
+			// 		 let auth = new AccountAuth();
+			// 		 if(auth.checkExist(this.input1))
+      //      {
+      //        alert('账号已存在！')
+      //        return 
+      //      }
+			// 		 let ret = await auth.register(this.input1,this.input2)
+      //      let user = await auth.getUser(this.input1, this.input2);
+      //      let  mkdirRet= await user.createDirectory("default")
+			// 		 let ret = true
+			// 		 if(ret && mkdirRet)
+			// 		 {
+			// 			 alert("注册成功,账号为："+this.input1)
+			// 			 this.centerDialogVisible = false
+			// 		 }else{
+			// 			  alert("注册失败,请重新尝试")
+			// 		 }
+			// 	} else {
+			// 		alert('请检查信息完整！')
 					
-				}
-			}
+			// 	}
+			// }
 		},
 	};
 </script>
