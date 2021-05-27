@@ -23,6 +23,7 @@ npm run build
 页面上：均已用本地数据实现、待替换API
 
 仅剩前端逐步替换在线接口 
+预览图，显示不出，请运行查看，账号：gby - password ;或文档图片
 
 ![image-20210527144055116](https://i.loli.net/2021/05/27/UbC1uyhALSwlx4Y.png)
 
