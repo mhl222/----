@@ -34,73 +34,69 @@
 		</div>
 		<div>
 			<div class="albumBody">
-				<div class="albumItem">
+
+				<div v-for="(item,index) in imgs"  class="albumItem">
 					<div class="albumItemBody">
-						<img src="../assets/login_back.jpg" />
-						<p><strong>defualt相册</strong></p>
+						<img :src="item.img" />
+						<p><strong>{{nameAlbum[index]}}</strong></p>
 					</div>
-					
+		
 				</div>
-				<div class="albumItem">
-					<div class="albumItemBody">
-						<img src="../assets/background.jpg" />
-						<p><strong>风景宜人</strong></p>
-					</div>
+				
 					
 				</div>
 				
 
 
-			</div>
+			
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
- data () {
-      return {
-
-		visible: false,
-		input1:''
-      };
-    }
-}
+  data() {
+    return {
+      visible: false,
+      input1: "",
+      // 测试
+      nameAlbum: ["defualt相册", "风景宜人"],
+      imgs: [{img: require("../assets/login_back.jpg")}, {img: require("../assets/background.jpg")}],
+    };
+  },
+};
 </script>
 
 <style>
-.album{
-	width: 100%;
-	height: 100%;
+.album {
+  width: 100%;
+  height: 100%;
 }
-.crateDig{
-	width: 250px;
+.crateDig {
+  width: 250px;
 }
-.albumBody{
-	padding: 20px 20px;
-	
-	
+.albumBody {
+  padding: 20px 20px;
 }
-.albumItem{
-	width: 178px;
-	height: 216px;
-	padding: 0 20px 20px 0;
-	margin: 0;
-	float: left;
-	margin: 10px 20px;
-	background-image: url(../assets/back1.png);
-	background-size: 100% 100%;
-	
+.albumItem {
+  width: 178px;
+  height: 216px;
+  padding: 0 20px 20px 0;
+  margin: 0;
+  float: left;
+  margin: 10px 20px;
+  background-image: url(../assets/back1.png);
+  background-size: 100% 100%;
 }
-.albumItemBody{
-	margin:30px 20px;
+.albumItemBody {
+  margin: 30px 20px;
 }
-.albumItem img{
-	width:150px;
-	height:150px;
-	border-radius: 50px;
+.albumItem img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50px;
 }
-.albumItem p{
-	text-align: center;
+.albumItem p {
+  text-align: center;
 }
 </style>
