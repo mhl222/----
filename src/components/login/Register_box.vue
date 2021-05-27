@@ -73,7 +73,7 @@
 					this.checkpw.msg = '密码不足8位';
 					this.checkpw.flag =false
 				}
-				if (this.input2.length > 8) {
+				if (this.input2.length >= 8) {
 					this.checkpw.msg= ''
 					this.checkpw.flag =true
 				}
