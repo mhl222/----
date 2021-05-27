@@ -158,11 +158,10 @@
 				this.$refs.upload.submit();
 			},
 			async uploadFile(params) {
-				console.log("uploadFile", params);
-				await this.$options.methods.getBase64(params.file).then(base64Res => {
-
-					// let user = this.$store.state.loginObj
-					let name = this.$options.methods.randomName()
+				// console.log("uploadFile", params);
+				let base64 =await this.$options.methods.getBase64(params.file)
+        console.log(base64)
+         	let name = this.$options.methods.randomName()
 					name = name + params.file.type.replace('/', '.')
 					let date
 					var now = new Date();
@@ -171,10 +170,18 @@
 					var datenow = now.getDate();
 					date = year + '年' + month + '月' + datenow
 					console.log(date)
-					// user.upload('default', name, base64Res, {
-					// 	uploadDate: date
-					// })
-				})
+          let ret =  await this.$store.state.loginObj.upload( name,'default', base64, {"uploadDate": date})
+          console.log(ret)
+          if(ret)
+          {
+            console.log('upload success')
+            return true
+          }else{
+            console.log('upload fiald')
+            return false
+          }
+          
+        
 			},
 			handlePreview(file) {
 				console.log(file);
