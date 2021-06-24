@@ -67,17 +67,17 @@ export default {
   methods: {
     
   },
-  created:{
-    async getAlbumNmae_cover(){
-      this.nameAlbum =  await this.$store.state.loginObj.listDirectory()
-      for( const name of this.nameAlbum)  {
-        let files = await this.$store.state.loginObj.listFilesByDir(nameAlbum)
-        let downloadCover = await this.$store.state.loginObj.download(files[0],nameAlbum)
-        this.imgsrouter.push(downloadCover)
-      }
+  // created:{
+  //   async getAlbumNmae_cover(){
+  //     this.nameAlbum =  await this.$store.state.loginObj.listDirectory()
+  //     for( const name of this.nameAlbum)  {
+  //       let files = await this.$store.state.loginObj.listFilesByDir(nameAlbum)
+  //       let downloadCover = await this.$store.state.loginObj.download(files[0],nameAlbum)
+  //       this.imgsrouter.push(downloadCover)
+  //     }
 
-    }
-  }
+  //   }
+  // }
 };
 </script>
 
