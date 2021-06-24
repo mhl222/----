@@ -63,7 +63,21 @@ export default {
       nameAlbum: ["defualt相册", "风景宜人"],
       imgs: [{img: require("../assets/login_back.jpg")}, {img: require("../assets/background.jpg")}],
     };
+  },	
+  methods: {
+    
   },
+  created:{
+    async getAlbumNmae_cover(){
+      this.nameAlbum =  await this.$store.state.loginObj.listDirectory()
+      for( const name of this.nameAlbum)  {
+        let files = await this.$store.state.loginObj.listFilesByDir(nameAlbum)
+        let downloadCover = await this.$store.state.loginObj.download(files[0],nameAlbum)
+        this.imgsrouter.push(downloadCover)
+      }
+
+    }
+  }
 };
 </script>
 
