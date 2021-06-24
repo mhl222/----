@@ -393,19 +393,21 @@ class UserAccount {
             Key: fullname,
             Range: "bytes=0-0"
         }
-
+        console.log('1')
         // get the link name from real file name
         let hide = undefined
         try {
             let dat = await this.s3.getObject(getMetadata).promise()
             hide = JSON.parse(decodeURI(dat["Metadata"]["hide"]))
-            console.log(hide)
+            // console.log(hide)
         } catch (err) {
             console.log(err)
+           
         }
 
         // delete the link
         if (hide === undefined) {
+
             return false;
         } else {
             let tmp = {
@@ -434,7 +436,8 @@ class UserAccount {
 
     async deleteFile(fn, dir) {
         let fullname = dir + "/" + fn
-        this.deleteFileByFullname(fullname)
+        return this.deleteFileByFullname(fullname)
+        
     }
 
     async moveFile(fn, dir) {
@@ -567,21 +570,35 @@ class AccountAuth {
 (async function () {
     let auth = new AccountAuth();
     let user = await auth.getUser("gby", "password");
-	console.log(user)
- //    let dat1 = await imageToBase64("./test.jpg")
+	// console.log(user)
+
 	// console.log(dat1)
  //    let dat2 = await imageToBase64("./pic2.jpg")
  //    let dat3 = await imageToBase64("./pic3.jpg")
- //    let fakePre = "data:image/jpg;base64,"
+     let fakePre = "data:image/jpg;base64,"
  //    await user.upload("file1", "dir2", fakePre + dat1, { "hello": "world" })
  //    await user.upload("file2", "dir2", fakePre + dat2, { "hello": "world" })
  //    await user.upload("file3", "dir2", fakePre + dat3, { "hello": "world" })
  //    await user.upload("file4", "dir2", fakePre + dat3, { "hello": "world" })
 
-	// console.log(await user.listDirectory())
+	  console.log(await user.listDirectory())
+    console.log(await user.listFilesByDir('default'))
 
+    // console.log(await user.listTypes())
+    // console.log(await user.listFilesByType('鸢（猛禽）'))
+    let dat1 = await imageToBase64("../assets/background.jpg")
+    let date = new Date();
+    let now = date.getFullYear()+'年'+(date.getMonth()+1)+'月'+date.getDate()+'日'
+    console.log(now)
+    // console.log(await user.download('defau1lt.img','default'))
+     console.log(await user.upload("test1", "default", fakePre + dat1, { "time": + now}))
+    console.log(await user.listFilesByDir('default'))
+    console.log(await user.deleteFile('test1','default'))
 
- //    await user.deleteFile("file1", "dir2")
+    console.log(await user.listFilesByDir('default'))
+
+ 
+
 
  //    let bundle = (await user.listFilesByType("泡泡"))[0]
  //    console.log(await user.listFilesByType("泡泡"))
