@@ -434,7 +434,7 @@ export class UserAccount {
 
     async deleteFile(fn, dir) {
         let fullname = dir + "/" + fn
-        this.deleteFileByFullname(fullname)
+        return this.deleteFileByFullname(fullname)
     }
 
     async moveFile(fn, dir) {
